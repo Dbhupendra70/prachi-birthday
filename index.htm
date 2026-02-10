@@ -281,6 +281,11 @@
             animation-timing-function: ease-in-out;
             color: #ff9e00;
         }
+        .ribbon {
+            font-size: 2rem;
+            animation-timing-function: ease-in-out;
+            color: #ff6b6b; /* You can change this color to match your design */
+        }
     </style>
 </head>
 
@@ -432,9 +437,10 @@
         // Create floating background elements
         document.addEventListener("DOMContentLoaded", function () {
             const floatingBg = document.getElementById("floating-bg");
-            const elements = ["🎀", "❤️", "🎁", "✨", "🎉", "🎂", "💫", "🌟"];
+            const elements = ["🎀", "🎈","❤️", "🎁", "✨", "🎉", "🎂", "💫", "🌟"];
             const elementTypes = {
                 "🎀": "ribbon",
+                "🎈":"balloon"
                 "❤️": "heart",
                 "🎁": "gift",
                 "✨": "star",
@@ -473,3 +479,4 @@
 
 
 </html>
+
