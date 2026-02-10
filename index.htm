@@ -432,7 +432,7 @@
         // Create floating background elements
         document.addEventListener("DOMContentLoaded", function () {
             const floatingBg = document.getElementById("floating-bg");
-            const elements = ["🎈", "❤️", "🎁", "✨", "🎉", "🎂", "💫", "🌟"];
+            const elements = ["🎀", "❤️", "🎁", "✨", "🎉", "🎂", "💫", "🌟"];
             const elementTypes = {
                 "🎀": "ribbon",
                 "❤️": "heart",
@@ -445,7 +445,7 @@
             };
 
             // Create 30 floating elements
-            for (let i = 0; i < 30; i++) {
+            for (let i = 0; i < 50; i++) {
                 const element = document.createElement("div");
                 const randomElement =
                     elements[Math.floor(Math.random() * elements.length)];
@@ -454,7 +454,7 @@
                 // Random position
                 const left = Math.random() * 100;
                 const size = 1 + Math.random() * 2;
-                const duration = 15 + Math.random() * 15;
+                const duration = 15 + Math.random() * 8;
                 const delay = Math.random() * 5;
 
                 element.className = `floating-element ${elementType}`;
@@ -470,5 +470,6 @@
         });
     </script>
 </body>
+
 
 </html>
