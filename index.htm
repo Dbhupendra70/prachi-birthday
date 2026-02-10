@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday Prachi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Open+Sans:wght@300;400&display=swap"
+        rel="stylesheet" />
+    <style>
+        :root {
+            --primary-color: #8c85ff;
+            --secondary-color: #d5dfff;
+            --accent-color: #ff6b6b;
+            --text-color: #333333;
+            --light-bg: #f8f9fa;
+        }
+
+        body {
+            font-family: "Open Sans", sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: "Montserrat", sans-serif;
+            font-weight: 600;
+        }
+
+        .header {
+            background: linear-gradient(135deg,
+                    var(--primary-color) 0%,
+                    #6a5af9 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle,
+                    rgba(255, 255, 255, 0.1) 0%,
+                    rgba(255, 255, 255, 0) 70%);
+            transform: rotate(30deg);
+        }
+
+        .center-image {
+            max-width: 80%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            margin: 2rem auto;
+            display: block;
+            border: 5px solid white;
+        }
+
+        .message {
+            background: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            text-align: center;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            padding: 0 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .gallery-item {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .signature {
+            font-style: italic;
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            font-size: 1.2rem;
+        }
+
+        .footer {
+            background: white;
+            padding: 2rem 0;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid #eee;
+        }
+
+        .birthday-text {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .birthday-text {
+                font-size: 1.8rem;
+            }
+
+            .message {
+                padding: 1.5rem;
+            }
+
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 576px) {
+            .header {
+                padding: 2rem 0;
+            }
+
+            .birthday-text {
+                font-size: 1.5rem;
+            }
+
+            .center-image {
+                max-width: 95%;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .special-frame {
+            border: 5px solid #d5dfff;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(140, 133, 255, 0.5);
+            overflow: hidden;
+            max-width: 80%;
+            margin: 2rem auto;
+        }
+
+        /* Different section dimness levels */
+        .section-1 {
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+                url("prachi-bg1.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .section-2 {
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                url("prachi-bg2.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .section-3 {
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+                url("prachi-bg3.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .horizontal-image-section {
+            width: 100%;
+            padding: 2rem 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f5f7fa;
+        }
+
+        .horizontal-frame {
+            border: 5px solid #d5dfff;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(140, 133, 255, 0.5);
+            overflow: hidden;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .horizontal-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .floating-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .floating-element {
+            position: absolute;
+            opacity: 0.7;
+            animation: float 20s linear infinite;
+            transform-origin: center;
+            user-select: none;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+            }
+
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+            }
+        }
+
+        .balloon {
+            font-size: 2rem;
+            animation-timing-function: ease-in-out;
+        }
+
+        .heart {
+            font-size: 1.8rem;
+            animation-timing-function: ease-in-out;
+            color: #ff6b6b;
+        }
+
+        .gift {
+            font-size: 1.5rem;
+            animation-timing-function: ease-in-out;
+            color: #4ecdc4;
+        }
+
+        .star {
+            font-size: 1.2rem;
+            animation-timing-function: ease-in-out;
+            color: #ffd166;
+        }
+
+        .cake {
+            font-size: 1.4rem;
+            animation-timing-function: ease-in-out;
+            color: #ff9e00;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="floating-background" id="floating-bg"></div>
+
+    <header class="header" style="
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url('images/top-banner.avif');
+        background-size: cover;
+        background-position: center;
+      ">
+        <div class="container">
+            <h1 class="birthday-text">Happy Birthday <bold>PRACHI</bold>!</h1>
+            <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto">
+                On February 11, 2005 earth got gifted a very special person....
+            </p>
+            <!-- <p
+          style="
+            font-size: 0.9rem;
+            max-width: 700px;
+            margin: 0 auto;
+            color: #e0e0e0;
+          "
+        >
+          (but we celebrate that gift on may 31st)
+        </p> -->
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="message">
+
+            <h2>Dear Prachi,</h2>
+
+            <p>
+                Wish you the happiest, happiest birthday 🎈, dear.
+                May the universe bless you with love, respect, care, trust, good health,
+                happiness, a fulfilling job, and a beautiful life ahead.
+            </p>
+
+            <p>
+                May you always be surrounded by people who truly understand you,
+                adore 💕 your presence, cherish you for who you are,
+                take care of everything you ever missed,
+                and bring endless charm into your life.
+            </p>
+
+            <p>
+                Today, I just want to pause and celebrate you —
+                the wonderful person you are. From the moment we met,
+                you have brought so much joy, laughter, and positivity into my life.
+            </p>
+
+            <p>
+                Your kindness, strength, and genuine spirit make you truly special.
+                You have a rare way of making everyone around you feel seen and valued.
+                Through your words, your laughter, and your constant support,
+                you make the world a better place.
+            </p>
+
+            <p>
+                Thank you for being such an amazing friend.
+                I am deeply grateful for all the memories we’ve shared
+                and all the moments that made us smile.
+            </p>
+
+            <p>
+                May this birthday bring you everything you deserve,
+                and may the coming year give you countless reasons to be happy.
+                Never stop being the beautiful soul that you are.
+            </p>
+
+            <p>
+                Wishing you a day as wonderful as you are 🌸
+            </p>
+
+            <div class="signature">
+                With love and appreciation,<br>
+                Your friend,<br>
+                Bhupendra
+            </div>
+
+        </div>
+
+
+        <div class="center-image-container">
+            <div class="special-frame">
+                <img src="images/prachi-pic4.jpg" alt="Special birthday photo" class="center-image" />
+            </div>
+        </div>
+
+        <h2 class="text-center mb-4" style="color: var(--primary-color)">
+            Celebrating You
+        </h2>
+        <div class="gallery">
+            <div class="gallery-item" style="background-image: url('images/prachi-pic1.jpg')"></div>
+            <div class="gallery-item" style="background-image: url('images/prachi-pic6.webp')"></div>
+            <div class="gallery-item" style="background-image: url('images/prachi-pic5.jpg')"></div>
+            <div class="gallery-item" style="background-image: url('images/prachi-pic3.jpg')"></div>
+            <div class="gallery-item" style="background-image: url('images/prachi-pic12.jpg')"></div>
+            <div class="gallery-item" style="background-image: url('images/prachi-pic7.jpeg')"></div>
+            <div class="gallery-item" style="background-image: url('images/prachi-pic8.jpeg')"></div>
+            <div class="gallery-item" style="background-image: url('images/prachi-pic9.jpeg')"></div>
+            <div class="gallery-item" style="background-image: url('images/prachi-pic10.jpeg')"></div>
+            <div class="gallery-item" style="background-image: url('images/prachi-pic11.jpg')"></div>
+             
+        </div>
+    </main>
+
+    <section>
+        <div class="row">
+            <div class="horizontal-image-section">
+                <div class="horizontal-frame">
+                    <img src="images/hum-char.jpeg" alt="Special horizontal birthday image" class="horizontal-image">
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <p>
+                Wishing you a birthday filled with joy, laughter, and all the things
+                that make you smile.
+            </p>
+            <p>May your special day be as adorable as you are!</p>
+        </div>
+        <div class="row">
+            <div class="col text-center">
+                <p style="font-size: 0.8rem; color: #999">
+                    &copy; 2026 made with love &hearts; . All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Simple animation for gallery items
+        document.addEventListener("DOMContentLoaded", function () {
+            const galleryItems = document.querySelectorAll(".gallery-item");
+
+            galleryItems.forEach((item, index) => {
+                item.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
+        // Floating background elements
+        // Create floating background elements
+        document.addEventListener("DOMContentLoaded", function () {
+            const floatingBg = document.getElementById("floating-bg");
+            const elements = ["🎈", "❤️", "🎁", "✨", "🎉", "🎂", "💫", "🌟"];
+            const elementTypes = {
+                "🎀": "ribbon",
+                "❤️": "heart",
+                "🎁": "gift",
+                "✨": "star",
+                "🎉": "star",
+                "🎂": "cake",
+                "💫": "star",
+                "🌟": "star",
+            };
+
+            // Create 30 floating elements
+            for (let i = 0; i < 30; i++) {
+                const element = document.createElement("div");
+                const randomElement =
+                    elements[Math.floor(Math.random() * elements.length)];
+                const elementType = elementTypes[randomElement];
+
+                // Random position
+                const left = Math.random() * 100;
+                const size = 1 + Math.random() * 2;
+                const duration = 15 + Math.random() * 15;
+                const delay = Math.random() * 5;
+
+                element.className = `floating-element ${elementType}`;
+                element.textContent = randomElement;
+                element.style.left = `${left}%`;
+                element.style.fontSize = `${size}rem`;
+                element.style.animationDuration = `${duration}s`;
+                element.style.animationDelay = `${delay}s`;
+                element.style.opacity = 0.5 + Math.random() * 0.5;
+
+                floatingBg.appendChild(element);
+            }
+        });
+    </script>
+</body>
+
+</html>
